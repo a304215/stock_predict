@@ -5,14 +5,14 @@
         </div>
         <div class="input_row">
             <p>帳號:</p>
-            <input type="text" name="account" />
+            <input type="text" name="account" (keyup)="getAccount($event)"/>
         </div>
         <div class="input_row">
             <p>密碼:</p>
-            <input type="password" name = "password" />
+            <input type="password"  (keyup)="getPassword($event)" />
         </div>
         <div class="button_row">
-            <button type="button">login</button>
+            <button (click)="getSubmit()" >login</button>
             <a href="#">還未註冊？點我進行註冊</a>
         </div>
     </div>

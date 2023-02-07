@@ -8,8 +8,11 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 var app = express();
-
-// view engine setup
+app.use((req, res, next)=> {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Credentials', false)
+  next()
+})
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
