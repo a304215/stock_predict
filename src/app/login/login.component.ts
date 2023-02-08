@@ -41,6 +41,12 @@ export class LoginComponent {
   }
   getSubmit(){
     this.getAlertList();
-    console.log(this.login_data)
+    for(let i = 0; i < this.login_data.length;i++){
+      if(this.login_data[i][0] == this.account){
+        if(this.login_data[i][1] == this.password){
+          window.location.assign("http://localhost:4200/register");
+        }
+      }
+    }
   }
 }
